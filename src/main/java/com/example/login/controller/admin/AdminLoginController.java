@@ -1,8 +1,10 @@
 package com.example.login.controller.admin;
 
 import com.example.login.entity.User;
+import com.example.login.service.MyUserDetails;
 import com.example.login.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,6 +25,9 @@ public class AdminLoginController {
     public String listUsers(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
         List<User> listUsers = userDetailsServiceImpl.listAll();
         model.addAttribute("listUsers", listUsers);
+        MyUserDetails userDetail = (MyUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userDetail.getUser();
+        model.addAttribute("USER_ADMIN",  user);
         return "users";
     }
 

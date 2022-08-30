@@ -10,7 +10,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User  implements Serializable {
+public class User implements Serializable {
+    public static final long serialVersionUID = 4789014362769128994L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -40,7 +41,7 @@ public class User  implements Serializable {
     private String password;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name ="users_roles",joinColumns = @JoinColumn(name = "users_id") ,inverseJoinColumns = @JoinColumn(name = "roles_id"))
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "users_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
     List<Role> roles;
 
     public void setId(Long id) {
@@ -105,5 +106,9 @@ public class User  implements Serializable {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }

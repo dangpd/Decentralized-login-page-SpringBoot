@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -8,6 +8,11 @@
     <title>Login Customer</title>
 </head>
 <body>
+<div>
+    <p>
+        <span th:text="'Hello ' + ${USER_USER.getFullName()}"></span>
+    </p>
+</div>
 <h1>You are logged in as customer</h1>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>

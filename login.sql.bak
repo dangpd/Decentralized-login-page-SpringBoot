@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 30, 2022 lúc 05:29 AM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 7.4.27
+-- Thời gian đã tạo: Th8 23, 2022 lúc 04:11 PM
+-- Phiên bản máy phục vụ: 10.4.16-MariaDB
+-- Phiên bản PHP: 7.3.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,9 +62,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `enable`, `first_name`, `last_name`, `password`) VALUES
-(1, 'admin', 'phamducdangadmin@gmail.com', b'1', 'Admin', 'Đăng', '$2a$10$CrhxqOpm7idxuF52aUugM.1TcG3xuaSoOQH.TxXweIU1iTPouWXJu'),
-(20, 'customer', 'dangpham122@gmail.com', b'1', 'Phạm Đức', 'Đăng', '$2a$10$CrhxqOpm7idxuF52aUugM.1TcG3xuaSoOQH.TxXweIU1iTPouWXJu'),
-(21, 'dang', 'ducdanghaui173@gmail.com', b'1', 'Duc', 'Dang', '$2a$10$1rya9y7dfOy7TaHaVdiGz.o1zY2WtMupdGY.6uBOEWaBSmi.0ESim');
+(1, 'admin', 'phamducdangadmin@gmail.com', b'1', 'Duc', 'Dang', '$2a$10$CrhxqOpm7idxuF52aUugM.1TcG3xuaSoOQH.TxXweIU1iTPouWXJu'),
+(20, 'customer', 'dangpham122@gmail.com', b'1', 'ngu', 'dang', '$2a$10$CrhxqOpm7idxuF52aUugM.1TcG3xuaSoOQH.TxXweIU1iTPouWXJu');
 
 -- --------------------------------------------------------
 
@@ -126,7 +125,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `users_roles`
